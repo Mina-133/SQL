@@ -1,0 +1,19 @@
+--Create a jewellery store database
+
+CREATE TABLE Minas_store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, popularity INTEGER);
+ 
+INSERT into Minas_store VALUES (1, "Necklaces", 100, 10.99, ;
+INSERT into Minas_store VALUES (2, "Earrings", 200, 5.99);
+INSERT into Minas_store VALUES (3, "Bracelets", 150, 7.99);
+INSERT into Minas_store VALUES (4, "Rings", 100, 4.99);
+INSERT into Minas_store VALUES (5, "Anklets", 5, 4.99);
+
+--Display the database ordered by price
+SELECT * FROM Minas_store 
+ORDER BY price desc;
+
+--What are the 2 most popular items?
+SELECT name, price, popularity
+FROM Minas_store
+order by popularity
+limit 2;
