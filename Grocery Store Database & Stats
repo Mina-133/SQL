@@ -27,4 +27,10 @@ limit 3;
 --What is the average price of items in aisle 4?
 SELECT avg(PRICE) "avg aisle 4 price"
 FROM store
-where aisle="4"
+where aisle="4";
+
+--What are the 3 most popular items?
+SELECT item, price, popularity
+FROM store
+ORDER BY popularity desc
+limit 3;
