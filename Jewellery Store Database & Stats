@@ -1,19 +1,30 @@
---Create a jewellery store database
-
-CREATE TABLE Minas_store (id INTEGER PRIMARY KEY, name TEXT, gold type TEXT, quantity INTEGER, price INTEGER, popularity INTEGER);
+--Create a grocery store database
  
-INSERT into Minas_store VALUES (1, "Necklaces", gold, 10.99, 56);
-INSERT into Minas_store VALUES (2, "Earrings", silver, 5.99, 24);
-INSERT into Minas_store VALUES (3, "Bracelets", silver, 7.99, 13);
-INSERT into Minas_store VALUES (4, "Rings", gold, 4.99,33);
-INSERT into Minas_store VALUES (5, "Anklets", silver, 4.99, 11);
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, aisle INTEGER, price INTEGER, popularity INTEGER);
+
+INSERT INTO store VALUES (1, "Milk", 3, 0.99, 82);
+INSERT INTO store VALUES (2, "Eggs", 7, 1.25, 77);
+INSERT INTO store VALUES (3, "Bread", 2, 1.20, 90);
+INSERT INTO store VALUES (4, "Blueberries", 4, 0.80, 25);
+INSERT INTO store VALUES(5, "Bananas", 4, 0.72, 51);
+INSERT INTO store VALUES (6, "Roses", 2, 4.99, 33);
+INSERT INTO store VALUES(7, "Flour", 7, 0.65, 60);
+INSERT INTO store VALUES (8, "Pasta", 6, 1.99, 49);
+INSERT INTO store VALUES (9, "Pizza", 8, 3.99, 62);
+INSERT INTO store VALUES (10, "Avocado", 4, 1.10, 22
+);
 
 --Display the database ordered by price
-SELECT * FROM Minas_store 
+SELECT * FROM store 
 ORDER BY price desc;
 
---What are the 2 most popular items?
-SELECT name, price, popularity
-FROM Minas_store
+--What are the 3 most popular items?
+SELECT item, price, popularity
+FROM store
 order by popularity
-limit 2;
+limit 3;
+
+--What is the average price of items in aisle 4?
+SELECT avg(PRICE) "avg aisle 4 price"
+FROM store
+where aisle="4"
